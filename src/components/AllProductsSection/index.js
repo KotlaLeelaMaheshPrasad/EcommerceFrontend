@@ -7,6 +7,7 @@ import ProductCard from "../ProductCard";
 import ProductsHeader from "../ProductsHeader";
 
 import "./index.css";
+import BASE_URL from "../../constants";
 
 const categoryOptions = [
   {
@@ -93,7 +94,7 @@ class AllProductsSection extends Component {
     const jwtToken = Cookies.get("jwt_token");
     const { activeOptionId, activeCategoryId, searchInput, activeRatingId } =
       this.state;
-    const apiUrl = `https://fashionfit.herokuapp.com/products/?sort_by=${activeOptionId}&category=${activeCategoryId}&title_search=${searchInput}&rating=${activeRatingId}`;
+    const apiUrl = BASE_URL+`products/?sort_by=${activeOptionId}&category=${activeCategoryId}&title_search=${searchInput}&rating=${activeRatingId}`;
     const options = {
       method: "GET",
       headers: {

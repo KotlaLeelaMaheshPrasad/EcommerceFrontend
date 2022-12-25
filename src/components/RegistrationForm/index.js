@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import BASE_URL from "../../constants";
 import "./index.css";
 
 class RegistrationForm extends Component {
@@ -23,7 +24,7 @@ class RegistrationForm extends Component {
   };
 
   sendOtp = async (mailInput) => {
-    const url = "https://fashionfit.herokuapp.com/otp";
+    const url = BASE_URL+"otp";
     const options = {
       method: "POST",
       headers: {
@@ -236,7 +237,7 @@ class RegistrationForm extends Component {
   validateMailExists = async () => {
     const { mailInput } = this.state;
     const url =
-      "https://fashionfit.herokuapp.com/userDetails/mails/" + mailInput;
+      BASE_URL+"userDetails/mails/" + mailInput;
     const options = {
       method: "GET",
     };
@@ -256,7 +257,7 @@ class RegistrationForm extends Component {
   };
   validateUserExists = async () => {
     const { usernameInput } = this.state;
-    const url = "https://fashionfit.herokuapp.com/userDetails/" + usernameInput;
+    const url = BASE_URL+"userDetails/" + usernameInput;
     const options = {
       method: "GET",
     };
@@ -300,7 +301,7 @@ class RegistrationForm extends Component {
         name: nameInput,
         password: passwordInput,
       };
-      const url = "https://fashionfit.herokuapp.com/register/";
+      const url = BASE_URL+"register/";
       const options = {
         method: "POST",
         headers: {

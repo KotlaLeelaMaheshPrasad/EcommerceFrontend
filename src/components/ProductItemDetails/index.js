@@ -10,6 +10,7 @@ import Header from "../Header";
 import SimilarProductItem from "../SimilarProductItem";
 
 import "./index.css";
+import BASE_URL from "../../constants";
 
 const apiStatusConstants = {
   initial: "INITIAL",
@@ -50,7 +51,7 @@ class ProductItemDetails extends Component {
       apiStatus: apiStatusConstants.inProgress,
     });
     const jwtToken = Cookies.get("jwt_token");
-    const apiUrl = `https://fashionfit.herokuapp.com/products/${id}`;
+    const apiUrl = BASE_URL+`products/${id}`;
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,

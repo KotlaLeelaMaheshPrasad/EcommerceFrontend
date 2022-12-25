@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import "./index.css";
+import BASE_URL from "../../constants";
+
+console.log(BASE_URL)
 
 class LoginForm extends Component {
   state = {
@@ -49,7 +52,7 @@ class LoginForm extends Component {
     event.preventDefault();
     const { username, password } = this.state;
     const userDetails = { username, password };
-    const url = "https://fashionfit.herokuapp.com/login/";
+    const url = BASE_URL+"login/";
     const options = {
       method: "POST",
       headers: {
